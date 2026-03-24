@@ -37,16 +37,14 @@ entity D_Flip_Flop is
 end D_Flip_Flop;
 
 architecture Behavioral of D_Flip_Flop is
-
 begin
     state: process(CLK)
     begin
-    if CLK'event then
+    if falling_edge(CLK) then
          if CLR = '1' then
              Q <= '0';    
-             if CLK = '0' then       
-                Q <= D;
-             end if;
+         else       
+            Q <= D;
          end if;
     end if;
     end process;
