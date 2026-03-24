@@ -38,7 +38,7 @@ entity Four_Bit_Counter_Modularized is
 end Four_Bit_Counter_Modularized;
 
 architecture Behavioral of Four_Bit_Counter_Modularized is
-    component Freq_Divider is
+    component Frequency_Divider is
         Port ( Clock_System : in STD_LOGIC;
                Clock_1Hz : out STD_LOGIC);
     end component;
@@ -54,10 +54,10 @@ architecture Behavioral of Four_Bit_Counter_Modularized is
     
 begin
     notTemp <= not(temp);
-    fd  : Freq_Divider port map(Clock_System => Clk_Sys, Clock_1Hz => Clk_1Hz)
-    ff0 : D_Flip_Flop port map(D => notTemp(0), CLK => Clk_1Hz, CLR => Reset, Q => temp(0));
-    ff1 : D_Flip_Flop port map(D => notTemp(1), CLK => temp(0),  CLR => Reset, Q => temp(1));
-    ff2 : D_Flip_Flop port map(D => notTemp(2), CLK => temp(1),  CLR => Reset, Q => temp(2));
-    ff3 : D_Flip_Flop port map(D => notTemp(3), CLK => temp(2),  CLR => Reset, Q => temp(3));
+    fd:  Frequency_Divider port map(Clock_System => Clk_Sys, Clock_1Hz => Clk_1Hz);
+    ff0: D_Flip_Flop port map(D => notTemp(0), CLK => Clk_1Hz, Q => temp(0), CLR => Reset);
+    ff1: D_Flip_Flop port map(D => notTemp(1), CLK => temp(0), Q => temp(1), CLR => Reset);
+    ff2: D_Flip_Flop port map(D => notTemp(2), CLK => temp(1), Q => temp(2), CLR => Reset);
+    ff3: D_Flip_Flop port map(D => notTemp(3), CLK => temp(2), Q => temp(3), CLR => Reset);
 
 end Behavioral;
