@@ -41,9 +41,12 @@ architecture Behavioral of D_Flip_Flop is
 begin
     state: process(CLK)
     begin
-    if CLK'event      
-         if CLK = '0' then       
-            Q <= D;
+    if CLK'event then
+         if CLR = '1' then
+             Q <= '0';    
+             if CLK = '0' then       
+                Q <= D;
+             end if;
          end if;
     end if;
     end process;
