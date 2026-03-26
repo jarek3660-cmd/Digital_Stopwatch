@@ -1,6 +1,4 @@
-##===============================
-## 7-Segment Display – ANODES
-##===============================
+
 set_property PACKAGE_PIN U13 [get_ports {Anode_7SD_Loc[7]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {Anode_7SD_Loc[7]}]
 
@@ -25,10 +23,6 @@ set_property IOSTANDARD LVCMOS33 [get_ports {Anode_7SD_Loc[1]}]
 set_property PACKAGE_PIN J17 [get_ports {Anode_7SD_Loc[0]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {Anode_7SD_Loc[0]}]
 
-
-##===============================
-## 7-Segment Display – CATHODES
-##===============================
 set_property PACKAGE_PIN T10 [get_ports {Cathode_7SD_Loc[0]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {Cathode_7SD_Loc[0]}]
 
@@ -53,10 +47,6 @@ set_property IOSTANDARD LVCMOS33 [get_ports {Cathode_7SD_Loc[6]}]
 set_property PACKAGE_PIN H15 [get_ports {Cathode_7SD_Loc[7]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {Cathode_7SD_Loc[7]}]
 
-
-##===============================
-## Count Pins (unchanged)
-##===============================
 set_property PACKAGE_PIN J15 [get_ports {Count[0]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {Count[0]}]
 
