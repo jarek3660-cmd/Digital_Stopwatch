@@ -1,15 +1,15 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-entity Display_Digits is
+entity Digital_Display is
     Port (
         Count        : in  STD_LOGIC_VECTOR(3 downto 0);
         Cathode_7SD  : out STD_LOGIC_VECTOR(7 downto 0);
         Anode_7SD    : out STD_LOGIC_VECTOR(7 downto 0)
     );
-end Display_Digits;
+end Digital_Display;
 
-architecture Behavioral of Display_Digits is
+architecture Behavioral of Digital_Display is
 begin
 
     -- Activate LEFTMOST digit (bit 7 = 0)
