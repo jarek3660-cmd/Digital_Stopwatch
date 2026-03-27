@@ -48,10 +48,10 @@ begin
     if Clock_System' event and Clock_System = '1' then
         count <= count + 1;
         if count = 50000000 then 
-            Clock_1Hz <= not sClock_Hz;
             sClock_Hz <= not sClock_Hz;
             count <= 0;
         end if;
     end if;
     end process;
+    Clock_1Hz <= sClock_Hz;
 end Behavioral;
