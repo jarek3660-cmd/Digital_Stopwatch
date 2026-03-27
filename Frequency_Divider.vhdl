@@ -46,10 +46,11 @@ begin
 process(Clock_System)
 begin
     if Clock_System' event and Clock_System = '1' then
-        count <= count + 1;
         if count = 50000000 then 
             sClock_Hz <= not sClock_Hz;
             count <= 0;
+        else 
+            count <= count + 1;
         end if;
     end if;
     end process;
