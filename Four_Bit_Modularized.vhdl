@@ -60,5 +60,5 @@ begin
     ff1: D_Flip_Flop port map(D => notTemp(1), CLK => temp(0), Q => temp(1), CLR => Reset);
     ff2: D_Flip_Flop port map(D => notTemp(2), CLK => temp(1), Q => temp(2), CLR => Reset);
     ff3: D_Flip_Flop port map(D => notTemp(3), CLK => temp(2), Q => temp(3), CLR => Reset);
-
+    Count <= temp;
 end Behavioral;
