@@ -1,8 +1,8 @@
-set_property PACKAGE_PIN E3 [get_ports {Clk_System}]
-set_property IOSTANDARD LVCMOS33 [get_ports {Clk_System}]
+set_property PACKAGE_PIN E3 [get_ports Clk_System]
+set_property IOSTANDARD LVCMOS33 [get_ports Clk_System]
 
-set_property PACKAGE_PIN N17 [get_ports {Reset}]
-set_property IOSTANDARD LVCMOS33 [get_ports {Reset}]
+set_property PACKAGE_PIN J15 [get_ports Reset]
+set_property IOSTANDARD LVCMOS33 [get_ports Reset]
 
 set_property PACKAGE_PIN U13 [get_ports {Anode_7SD_Loc[7]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {Anode_7SD_Loc[7]}]
@@ -51,3 +51,4 @@ set_property IOSTANDARD LVCMOS33 [get_ports {Cathode_7SD_Loc[6]}]
 
 set_property PACKAGE_PIN H15 [get_ports {Cathode_7SD_Loc[7]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {Cathode_7SD_Loc[7]}]
+
