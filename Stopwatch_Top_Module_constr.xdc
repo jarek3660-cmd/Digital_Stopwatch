@@ -28,27 +28,27 @@ set_property IOSTANDARD LVCMOS33 [get_ports {Anode_7SD_Loc[1]}]
 set_property PACKAGE_PIN J17 [get_ports {Anode_7SD_Loc[0]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {Anode_7SD_Loc[0]}]
 
-set_property PACKAGE_PIN T10 [get_ports {Cathode_7SD_Loc[0]}]
+set_property PACKAGE_PIN H15 [get_ports {Cathode_7SD_Loc[0]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {Cathode_7SD_Loc[0]}]
 
-set_property PACKAGE_PIN R10 [get_ports {Cathode_7SD_Loc[1]}]
+set_property PACKAGE_PIN L18 [get_ports {Cathode_7SD_Loc[1]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {Cathode_7SD_Loc[1]}]
 
-set_property PACKAGE_PIN K16 [get_ports {Cathode_7SD_Loc[2]}]
+set_property PACKAGE_PIN T11 [get_ports {Cathode_7SD_Loc[2]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {Cathode_7SD_Loc[2]}]
 
-set_property PACKAGE_PIN K13 [get_ports {Cathode_7SD_Loc[3]}]
+set_property PACKAGE_PIN P15 [get_ports {Cathode_7SD_Loc[3]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {Cathode_7SD_Loc[3]}]
 
-set_property PACKAGE_PIN P15 [get_ports {Cathode_7SD_Loc[4]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {Cathode_7SD_Loc[4]}]
 
-set_property PACKAGE_PIN T11 [get_ports {Cathode_7SD_Loc[5]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {Cathode_7SD_Loc[5]}]
 
-set_property PACKAGE_PIN L18 [get_ports {Cathode_7SD_Loc[6]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {Cathode_7SD_Loc[6]}]
 
-set_property PACKAGE_PIN H15 [get_ports {Cathode_7SD_Loc[7]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {Cathode_7SD_Loc[7]}]
 
+set_property PACKAGE_PIN K13 [get_ports {Cathode_7SD_Loc[4]}]
+set_property PACKAGE_PIN K16 [get_ports {Cathode_7SD_Loc[5]}]
+set_property PACKAGE_PIN R10 [get_ports {Cathode_7SD_Loc[6]}]
+set_property PACKAGE_PIN T10 [get_ports {Cathode_7SD_Loc[7]}]
