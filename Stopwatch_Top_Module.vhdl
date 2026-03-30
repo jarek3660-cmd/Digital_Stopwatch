@@ -38,7 +38,7 @@ begin
             Reset   => Reset,
             Count   => Count_4_Bit_Local
         );
-
+    
     Display_Inst : Digital_Display
         port map (
             Count       => Count_4_Bit_Local,
