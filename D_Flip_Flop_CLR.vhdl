@@ -12,7 +12,7 @@ begin
     begin
         if CLR = '1' then
             Q <= '0';
-        elsif rising_edge(CLK) then
+        elsif falling_edge(CLK) then
             Q <= D;
         end if;
     end process;
