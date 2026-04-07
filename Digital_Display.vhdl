@@ -1,41 +1,52 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-entity Digital_Display is
-    Port (
-        Count        : in  STD_LOGIC_VECTOR(3 downto 0);
-        Cathode_7SD  : out STD_LOGIC_VECTOR(7 downto 0);
-        Anode_7SD    : out STD_LOGIC_VECTOR(7 downto 0)
-    );
-end Digital_Display;
+entity Stopwatch_Top_Module_tb is
+--()Port
+end Stopwatch_Top_Module_tb;
 
-architecture Behavioral of Digital_Display is
+architecture Behavioral of Stopwatch_Top_Module_tb is
+
+    signal Clk_System_tb  : std_logic := '0';
+    signal Reset_tb       : std_logic := '0';
+    signal Cathode_7SD_tb : std_logic_vector(7 downto 0);
+    signal Anode_7SD_tb   : std_logic_vector(7 downto 0);
+
+    constant CLK_PERIOD : time := 10 ns;
+    
+    component Stopwatch_Top_Module is
+        Port (
+            Clk_System  : in  STD_LOGIC;
+            Reset       : in  STD_LOGIC;
+            Cathode_7SD_Loc : out STD_LOGIC_VECTOR(7 downto 0);
+            Anode_7SD_Loc   : out STD_LOGIC_VECTOR(7 downto 0)
+        );
+    end component;
 begin
 
-    -- Activate LEFTMOST digit (bit 7 = 0)
-    Anode_7SD <= "01111111";
+    DUT : Stopwatch_Top_Module
+        port map (
+            Clk_System      => Clk_System_tb,
+            Reset           => Reset_tb,
+            Cathode_7SD_Loc => Cathode_7SD_tb,
+            Anode_7SD_Loc   => Anode_7SD_tb
+        );
 
-    process(Count)
+    clk_process : process
     begin
-        case Count is
-            when "0000" => Cathode_7SD <= "00000011"; -- 0
-            when "0001" => Cathode_7SD <= "10011111"; -- 1
-            when "0010" => Cathode_7SD <= "00100101"; -- 2
-            when "0011" => Cathode_7SD <= "00001101"; -- 3
-            when "0100" => Cathode_7SD <= "10011001"; -- 4
-            when "0101" => Cathode_7SD <= "01001001"; -- 5
-            when "0110" => Cathode_7SD <= "01000001"; -- 6
-            when "0111" => Cathode_7SD <= "00011111"; -- 7
-            when "1000" => Cathode_7SD <= "00000001"; -- 8
-            when "1001" => Cathode_7SD <= "00001001"; -- 9
-            when "1010" => Cathode_7SD <= "00010001"; -- A
-            when "1011" => Cathode_7SD <= "11000001"; -- b
-            when "1100" => Cathode_7SD <= "01100011"; -- C
-            when "1101" => Cathode_7SD <= "10000101"; -- d
-            when "1110" => Cathode_7SD <= "01100001"; -- E
-            when "1111" => Cathode_7SD <= "01110001"; -- F
-            when others => Cathode_7SD <= "11111111"; -- all off
-        end case;
+        Clk_System_tb <= '0';
+        wait for CLK_PERIOD/2;
+        Clk_System_tb <= '1';
+        wait for CLK_PERIOD/2;
+    end process;
+
+    stim_process : process
+    begin
+        Reset_tb <= '1';
+        wait for 10 ns;
+        Reset_tb <= '0';
+        wait for 10 ns;
+        wait;
     end process;
 
 end Behavioral;
